@@ -41,38 +41,27 @@ class RecipeService
     public function create(Recipe $recipe): ?Recipe
     {
         $user = $this->security->getUser();
-        $identifier = $user->getUserIdentifier();
-        $userObj = $this->userRepository->findOneBy(["email" => $identifier]);
-        $request_per_day = $this->recipeRequestService->getRequestNumber($user);
-        $plan = $userObj->getPlan();
-        if($request_per_day >= $plan->getNbRecipe())
-        {
-            return null;
-        }
-        else
-        {
-            $content = $this->generationService->generateContent($recipe);
-            $title = $this->generationService->generateTitle($recipe->getIngredients()->toArray());
-            $image = $this->generationService->generateImage($recipe->getIngredients()->toArray(), $title);
-            $date = new \DateTimeImmutable('now');
+        $content = $this->generationService->generateContent($recipe);
+        $title = $this->generationService->generateTitle($recipe->getIngredients()->toArray());
+        $image = $this->generationService->generateImage($recipe->getIngredients()->toArray(), $title);
+        $date = new \DateTimeImmutable('now');
 
-            $recipe->setContent($content);
-            $recipe->setTitle($title);
-            $recipe->setImage($image);
-            $recipe->setUserId($user);
-            $recipe->setCreatedAt($date);
+        $recipe->setContent($content);
+        $recipe->setTitle($title);
+        $recipe->setImage($image);
+        $recipe->setUserId($user);
+        $recipe->setCreatedAt($date);
 
 
-            $rq = new RecipeRequest();
-            $rq->setUserId($user);
-            $rq->setCreatedAt($date);
+        $rq = new RecipeRequest();
+        $rq->setUserId($user);
+        $rq->setCreatedAt($date);
 
-            $this->em->persist($recipe);
-            $this->em->persist($rq);
-            $this->em->flush();
+        $this->em->persist($recipe);
+        $this->em->persist($rq);
+        $this->em->flush();
 
-            return $recipe;
-        }
+        return $recipe;
 
     }
 
