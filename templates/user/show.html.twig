@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('style/profile.css') }}" />
+{% endblock %}
+
+{% block header %}
+    {{ include('partials/_header.html.twig') }}
+{% endblock %}
+
+{% block menu %}
+    {{ include('partials/_menu.html.twig') }}
+{% endblock %}
+
+
+{% block title %}Mon profil{% endblock %}
+
+{% block main %}
+
+    <div class="container">
+        <div class="grid">
+            <div class="header-grid">
+                <img src='https://api.dicebear.com/5.x/thumbs/svg?radius=50&seed={{ user.username }}' class="avatar avatar_display">
+                <div class="item-header">
+                    <h1 class="subheading">Profil</h1>
+                    <p class="fw-body">Retrouvez toutes les informations vous concernant et les paramètres de votre compte !</p>
+                </div>
+            </div>
+            <div class="inputWrapper">
+                <label for="email"> Email </label>
+                <input type="text" placeholder="{{ user.email }}" disabled>
+            </div>
+            <div class="inputWrapper">
+                <label for="email"> Prénom </label>
+                <input type="text" placeholder="{{ user.firstname }}" disabled>
+            </div>
+            <div class="inputWrapper">
+                <label for="email"> Nom </label>
+                <input type="text" placeholder="{{ user.lastname }}" disabled>
+            </div>
+            <div class="inputWrapper">
+                <label for="email"> Pseudo </label>
+                <input type="text" placeholder="{{ user.username }}" disabled>
+            </div>
+
+            <div class="footer-grid">
+                <a href="{{ path('user_edit') }}" > <button class="link button-primary"> Modifier </button></a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+{% endblock %}

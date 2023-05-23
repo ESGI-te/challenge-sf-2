@@ -1,0 +1,5 @@
+<div class="recipe-list">
+    {% for recipe in recipes %}
+        {{ include("partials/_recipe-card.html.twig", { recipe }) }}
+    {% endfor %}
+</div>

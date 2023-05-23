@@ -1,6 +1,10 @@
 twig:
     default_path: '%kernel.project_dir%/templates'
 
+services:
+    App\Twig\Extension\CentimesToEurosExtension:
+        tags: ['twig.extension']
+
 when@test:
     twig:
         strict_variables: true

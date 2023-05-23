@@ -1,0 +1,120 @@
+{% extends 'base.html.twig' %}
+{% block javascripts %}
+    {{ parent() }}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tom-select/2.2.2/js/tom-select.complete.js"></script>
+    <script defer src="{{ asset('js/generateRecipe.js') }}"></script>
+{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tom-select/2.2.2/css/tom-select.default.min.css" integrity="sha512-+k6L1rcaTY8EY8hPjjh4Gfie0pUFGZxpofzDrEFV6oN/4UbzXWMIZBdUVJVg0v6vYmAN2EUuYZwRCNkAqzDOVw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{{ asset('style/recipe-generate.css') }}" />
+{% endblock %}
+{% block header %}
+    {{ include('partials/_header.html.twig') }}
+{% endblock %}
+{% block menu %}
+    {{ include('partials/_menu.html.twig') }}
+{% endblock %}
+{% block main %}
+    <div class="container">
+        <div class="headingWrapper">
+            <img src="{{ asset('image/generate-recipe-illustration.png') }}">
+            <div class="headingInnerWrapper">
+                <h1 class="heading">C'est parti !</h1>
+                <p class="fw-body">Remplissez le formulaire pour créer votre recette</p>
+            </div>
+        </div>
+        {{ form_start(form) }}
+            <fieldset class="inputGroup inputGroup--ingredients">
+                <h2 class="subtitle bold">Ingrédients</h2>
+                <div class=" inputGroup--ingredients__innerWrapper ">
+                    <div class="inputWrapper">
+                        {{ form_label(form.Vegetables) }}
+                        {{ form_widget(form.Vegetables) }}
+                        {{ form_errors(form.Vegetables) }}
+                    </div>
+                    <div class="inputWrapper">
+                        {{ form_label(form.Meat) }}
+                        {{ form_widget(form.Meat) }}
+                        {{ form_errors(form.Meat) }}
+                    </div>
+                    <div class="inputWrapper">
+                        {{ form_label(form.Grains) }}
+                        {{ form_widget(form.Grains) }}
+                        {{ form_errors(form.Grains) }}
+                    </div>
+                    <div class="inputWrapper">
+                        {{ form_label(form.Fish) }}
+                        {{ form_widget(form.Fish) }}
+                        {{ form_errors(form.Fish) }}
+                    </div>
+                    <div class="inputWrapper">
+                        {{ form_label(form.Spices) }}
+                        {{ form_widget(form.Spices) }}
+                        {{ form_errors(form.Spices) }}
+                    </div>
+                    <div class="inputWrapper">
+                        {{ form_label(form.Herbs) }}
+                        {{ form_widget(form.Herbs) }}
+                        {{ form_errors(form.Herbs) }}
+                    </div>
+                    <div class="inputWrapper">
+                        {{ form_label(form.Fruits) }}
+                        {{ form_widget(form.Fruits) }}
+                        {{ form_errors(form.Fruits) }}
+                    </div>
+                    <div class="inputWrapper">
+                        {{ form_label(form.Sweets) }}
+                        {{ form_widget(form.Sweets) }}
+                        {{ form_errors(form.Sweets) }}
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset class="inputGroup">
+                <h2 class="subtitle bold">Pour combien ?</h2>
+                    <div class="numberPeopleWrapper">
+                        <button id="decrement_nb_people">-</button>
+                        {{ form_widget(form.nb_people) }}
+                        <button id="increment_nb_people">+</button>
+                    </div>
+                    {{ form_errors(form.nb_people) }}
+            </fieldset>
+            <div class="wrapper">
+                <fieldset class="inputGroup">
+                    <h2 class="subtitle bold">Difficulté</h2>
+                    <div class="inputWrapper">
+                        {{ form_label(form.difficulty) }}
+                        {{ form_widget(form.difficulty) }}
+                        {{ form_errors(form.difficulty) }}
+                    </div>
+                </fieldset>
+                <fieldset class="inputGroup">
+                    <h2 class="subtitle bold">Temps</h2>
+                    <div class="inputWrapper">
+                        {{ form_label(form.duration) }}
+                        {{ form_widget(form.duration) }}
+                        {{ form_errors(form.duration) }}
+                    </div>
+                </fieldset>
+            </div>
+        <button type="submit" class="button button--primary">Générer la recette</button>
+        {{ form_end(form) }}
+    </div>
+    <script>
+        const $container = document.querySelector('.container');
+        const $heading = document.querySelector('.headingWrapper');
+        const $form = document.querySelector('form[name="recipe"]');
+        $form.addEventListener('submit', () => {
+            $form.style.display = 'none';
+            $heading.style.display = 'none';
+            $form.insertAdjacentHTML('afterend', `
+            <div class="loader">
+                <video autoplay muted loop>
+                    <source src="{{ asset('video/loader.mp4') }}" type="video/mp4"/>
+                </video>
+                <h2 class="fw-body">Notre chef prépare votre recette...</h2>
+            </div>
+            `)
+        })
+    </script>
+{% endblock %}

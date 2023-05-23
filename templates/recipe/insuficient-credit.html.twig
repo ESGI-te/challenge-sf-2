@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('style/payment-cancel.css') }}">
+{% endblock %}
+{% block header %}
+    {{ include('partials/_header.html.twig') }}
+{% endblock %}
+{% block menu %}
+    {{ include('partials/_menu.html.twig') }}
+{% endblock %}
+
+{% block main %}
+    <div class="container">
+        <h1 class="fw-body">
+            Oups, il semblerait que vous n'ayez plus de toques !
+        </h1>
+        <img src="{{ asset('image/error.svg') }}">
+        <a href="{{ path('stripe_payment') }}">
+            <button class="button button--primary" type="submit">Obtenir des toques</button></a>
+    </div>
+{% endblock %}
+
+

@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('style/home.css') }}">
+{% endblock %}
+{% block header %}
+    {{ include('partials/_header.html.twig') }}
+{% endblock %}
+{% block menu %}
+    {{ include('partials/_menu.html.twig') }}
+{% endblock %}
+
+{% block main %}
+
+    <div class="container">
+        {{ include('partials/_searchbar.html.twig') }}
+        <div class="hero">
+                <img class="hero__illustration" src="{{ asset('image/Preparing.svg') }}" alt="Your Image">
+            <div class="hero__text">
+                <h2 class="fw-body">Générez des recettes délicieuses a partir de ce que vous avez dans votre frigo !</h2>
+                <a href="{{ path('recipe_generate') }}">
+                    <button class="button button--primary">Générer une recette</button>
+                </a>
+            </div>
+        </div>
+        <div class="sort">
+            <h3 class="fw-body">Vos dernières recettes générées</h3>
+            <form method="get" class="fw-body">
+                <select class="sortSelector" id="sort" name="sort" onchange="this.form.submit()">
+                    <option value="created_at_desc"{% if sort == 'created_at_desc' %} selected{% endif %}>Nouvelle</option>
+                    <option value="created_at_asc"{% if sort == 'created_at_asc' %} selected{% endif %}>Ancienne</option>
+                </select>
+            </form>
+        </div>
+        <div class="list-wrapper">
+            {% if recipes %}
+                {{ include('partials/_recipe-list.html.twig', { recipes }) }}
+            {% else %}
+                <p>No recipes found.</p>
+            {% endif %}
+        </div>
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,49 @@
+.contentWrapper {
+    display: flex;
+    flex-direction:column;
+    row-gap: 1.5rem;
+    max-width: 318px;
+    width: 100%;
+}
+.container {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 3rem;
+    padding: 3rem;
+    background-image: url("../image/background-authentication.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.container > .logo {
+    width: 168px;
+    height: 162px;
+    align-self: center;
+}
+.loginForm {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+.app-main {
+    padding: 0;
+}
+.loginForm__buttonsWrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+    margin-top: 0.5rem;
+}
+.loginForm__buttonsWrapper > .link {
+    color: var(--green);
+    align-self: center;
+}
+@media only screen and (min-width: 576px) {
+    .container {
+        align-items: center;
+    }
+    .contentWrapper > h1 {
+        align-self: center;
+    }
+}

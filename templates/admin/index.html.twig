@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Panel d'administration{% endblock %}
+
+
+{% block main %}
+
+    <div class="container d-flex justify-content-between">
+        <div class="row"></div>
+        {{ include('partials/_adminnav.html.twig') }}
+        <main class="col-9 border border-light bg-white p-2">
+            <h1>Panel d'administration</h1>
+        </main>
+    </div>
+
+{% endblock %}

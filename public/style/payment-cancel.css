@@ -1,0 +1,20 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 3rem;
+    align-items: center;
+    text-align: center;
+}
+
+img {
+    max-width: 500px;
+}
+
+@media(max-width: 767px) {
+    .checkout {
+        align-self: stretch;
+    }
+    .button {
+        max-width: 100%;
+    }
+}

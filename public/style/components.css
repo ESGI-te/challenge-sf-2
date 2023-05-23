@@ -1,0 +1,90 @@
+/* Buttons */
+.button {
+    border: solid 1px var(--green);
+    width: 100%;
+    max-width: 318px;
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    text-align: center;
+}
+
+.button--primary {
+    background-color: var(--green);
+    color: #FFFFFF;
+}
+.button--primary:hover {
+    background-color: #62675E;
+}
+
+.button--secondary {
+    background-color: #FFFFFF;
+    color: var(--green);
+}
+
+button {
+    cursor: pointer;
+}
+
+/* Inputs */
+input[type="text"], input[type="password"], input[type="email"] {
+    width: 100%;
+    max-width: 318px;
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    border: solid 1px var(--black);
+    background-color: #ffffff;
+}
+.inputWrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem;
+}
+.inputWrapper > label {
+    font-weight: 400;
+    font-size: 0.75rem;
+    line-height: 16px;
+    font-family: 'GeneralSans-Regular';
+    color: black;
+}
+.searchForm {
+    width: 100%;
+    position: relative;
+    height: 56px;
+}
+.searchForm input[type="text"]{
+    max-width: 100%;
+    height: 100%;
+    padding-left: 3.5rem;
+    padding-right: 1.5rem;
+    border: none;
+}
+.searchForm > img {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 1.5rem;
+}
+.recipe-list {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    flex: 1;
+}
+.recipe-card {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem;
+    max-width: 255px;
+    background-color: #FFFFFF;
+    border-radius: 0.5rem;
+}
+.recipe-card-title {
+    padding: 0.5rem;
+}
+.recipe-card > img {
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    max-height: 180px;
+    object-fit: cover;
+    aspect-ratio: 2/2;
+}

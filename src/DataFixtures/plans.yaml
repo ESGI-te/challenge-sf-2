@@ -1,0 +1,20 @@
+plan_1:
+   name: Premières toques
+   description:  Le plan Premières toques est parfait pour les amateurs de cuisine en herbe. Avec 5 recettes savoureuses soigneusement sélectionnées, ce plan vous offre l'occasion de commencer votre aventure culinaire. Découvrez de nouvelles saveurs, apprenez des techniques de base et épatez vos proches avec des plats délicieux. Pour seulement 1,99 euros, ce plan est une excellente introduction à l'univers de la cuisine.
+   nb_recipe: 5
+   price: 199
+plan_2:
+  name: Première étoile Michelin
+  description: Le plan Première étoile Michelin est conçu pour les passionnés de cuisine qui recherchent une expérience gastronomique plus élaborée. Avec 12 recettes raffinées inspirées des meilleurs chefs, ce plan vous permettra de vous surpasser en cuisine. Explorez des techniques avancées, jouez avec les textures et les saveurs, et élevez vos compétences culinaires au niveau supérieur. Obtenez ce plan exclusif pour seulement 4,99 euros et offrez-vous une expérience culinaire exceptionnelle.
+  nb_recipe: 12
+  price: 499
+plan_3:
+  name: Deuxième étoile Michelin
+  description: Le plan Deuxième étoile Michelin est conçu pour les gastronomes avides de nouvelles découvertes culinaires. Avec 28 recettes élégantes et sophistiquées, ce plan vous plongera dans le monde de la haute cuisine. Maîtrisez des techniques avancées, explorez des ingrédients exotiques et impressionnez vos convives avec des plats dignes des meilleurs restaurants étoilés. Pour seulement 9,99 euros, ce plan vous ouvre les portes d'une expérience culinaire inoubliable.
+  nb_recipe: 28
+  price: 999
+plan_4:
+  name: Troisième étoile Michelin
+  description: Le plan Troisième étoile Michelin est le summum de l'excellence culinaire. Avec 70 recettes exceptionnelles, ce plan est réservé aux véritables passionnés de la cuisine qui aspirent à la perfection. Découvrez des techniques de pointe, créez des plats gastronomiques élaborés et repoussez les limites de votre créativité culinaire. Pour 19,99 euros, ce plan vous offre une opportunité unique de vous immerger dans le monde de la haute gastronomie et de vous épanouir en tant que chef accompli.
+  nb_recipe: 70
+  price: 1999

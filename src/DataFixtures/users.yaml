@@ -1,0 +1,109 @@
+user_1:
+  email: user1@example.com
+  password: password
+  firstname: John
+  lastname: Doe
+  roles:
+    - ROLE_ADMIN
+    - IS_FULLY_AUTHENTICATED
+  created_at: '2023-02-18 12:00:00'
+  username: johndoe
+user_2:
+  email: user2@example.com
+  password: password
+  firstname: Jane
+  lastname: Smith
+  roles:
+    - IS_FULLY_AUTHENTICATED
+  created_at: '2023-02-18 12:00:00'
+  username: janesmith
+user_3:
+  email: user3@example.com
+  password: password
+  firstname: William
+  lastname: Johnson
+  roles:
+    - IS_FULLY_AUTHENTICATED
+  created_at: '2023-02-18 12:00:00'
+  username: williamjohnson
+user_4:
+  email: user4@example.com
+  password: password
+  firstname: Elizabeth
+  lastname: Brown
+  roles:
+    - IS_FULLY_AUTHENTICATED
+  created_at: '2023-02-18 12:00:00'
+  username: elizabethbrown
+user_5:
+  email: user5@example.com
+  password: password
+  firstname: Michael
+  lastname: Davis
+  roles:
+    - IS_FULLY_AUTHENTICATED
+  created_at: '2023-02-18 12:00:00'
+  username: michaeldavis
+user_6:
+  email: user6@example.com
+  password: password
+  firstname: Sarah
+  lastname: Miller
+  roles:
+    - IS_FULLY_AUTHENTICATED
+  created_at: '2023-02-18 12:00:00'
+  username: sarahmiller
+user_7:
+  email: user7@example.com
+  password: password
+  firstname: David
+  lastname: Wilson
+  roles:
+    - IS_FULLY_AUTHENTICATED
+  created_at: '2023-02-18 12:00:00'
+  username: davidwilson
+user_8:
+  email: user8@example.com
+  password: password
+  firstname: Emily
+  lastname: Moore
+  roles:
+    - IS_FULLY_AUTHENTICATED
+  created_at: '2023-02-18 12:00:00'
+  username: emilymoore
+user_9:
+  email: user9@example.com
+  password: password
+  firstname: James
+  lastname: Taylor
+  roles:
+    - IS_FULLY_AUTHENTICATED
+  created_at: '2023-02-18 12:00:00'
+  username: jamestaylor
+user_10:
+  email: user10@example.com
+  password: password
+  firstname: Ashley
+  lastname: Anderson
+  roles:
+    - IS_FULLY_AUTHENTICATED
+  created_at: '2023-02-18 12:00:00'
+  username: ashleyanderson
+user_11:
+  email: user11@example.com
+  password: password
+  firstname: Christopher
+  lastname: Thomas
+  roles:
+    - IS_FULLY_AUTHENTICATED
+  created_at: '2023-02-18 12:00:00'
+  username: christopherthomas
+user_12:
+  email: user12@example.com
+  password: password
+  firstname: Amanda
+  lastname: Jackson
+  roles:
+    - IS_FULLY_AUTHENTICATED
+  created_at: '2023-02-18 12:00:00'
+  username: amandajackson

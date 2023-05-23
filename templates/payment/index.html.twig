@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Payment{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('style/payment.css') }}">
+{% endblock %}
+
+
+{% block header %}
+    {{ include('partials/_header.html.twig') }}
+{% endblock %}
+
+{% block menu %}
+    {{ include('partials/_menu.html.twig') }}
+{% endblock %}
+
+
+ {% block main %}
+     <div class="container">
+         <h1 class="heading">Obtenir des toques</h1>
+         <div class="plans-grid fw-body">
+             {% for plan in plans %}
+             <div class="plan-card">
+                 <div class="plan-title">
+                     <img src="{{ asset('icons/plan' ~ loop.index ~ '.svg') }}">
+                     <h2>{{ plan.name }}</h2>
+                 </div>
+                 <span>{{ plan.nbRecipe }} toques (recettes) </span>
+                 <span>{{ plan.price() | centimes_to_euros }}</span>
+                 <form action="/payment/checkout/?plan_id={{ plan.id }}" method="POST">
+                     <button class="button button--primary" type="submit">Obtenir</button>
+                 </form>
+             </div>
+             {% endfor %}
+         </div>
+
+     </div>
+ {% endblock %}
+

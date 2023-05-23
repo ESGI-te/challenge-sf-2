@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Difficulté de la recette {% endblock %}
+
+{% block main %}
+
+    <div class="container d-flex justify-content-between">
+        <div class="row"></div>
+        {{ include('partials/_adminnav.html.twig') }}
+        <main class="col-9 border border-light bg-white p-2">
+            <h1>Difficulté de la recette </h1>
+            <label for="searchInput">Recherche:</label>
+            <input id="searchInput" type="text" class="form-control mb-3" placeholder="Tapez pour rechercher...">
+            <a class="btn btn-primary m-4" href="{{ path('app_recipe_difficulty_new') }}">Crée</a>
+            <table id="myTable" class="table table-striped">
+                <thead>
+                <tr>
+                    <th class="col-md-4">Id</th>
+                    <th class="col-md-4">Nom</th>
+                    <th class="col-md-4">action</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for recipe_difficulty in recipe_difficulties %}
+                    <tr>
+                        <td class="col-md-4">{{ recipe_difficulty.id }}</td>
+                        <td class="col-md-4">{{ recipe_difficulty.name }}</td>
+                        <td class="col-md-4">
+                            <a class="btn btn-secondary" href="{{ path('app_recipe_difficulty_show', {'id': recipe_difficulty.id}) }}">Afficher</a>
+                            <a class="btn btn-success" href="{{ path('app_recipe_difficulty_edit', {'id': recipe_difficulty.id}) }}">Modifier</a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="3">Aucun enregistrement trouvé</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </main>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('#searchInput').keyup(function() {
+                var searchText = $(this).val().toLowerCase();
+                $('#myTable tbody tr').filter(function() {
+                    return $(this).text().toLowerCase().indexOf(searchText) === -1;
+                }).hide();
+                $('#myTable tbody tr').filter(function() {
+                    return $(this).text().toLowerCase().indexOf(searchText) !== -1;
+                }).show();
+            });
+        });
+    </script>
+
+
+{% endblock %}

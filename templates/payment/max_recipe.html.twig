@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Payment{% endblock %}
+
+
+
+{% block main %}
+    <div class="content">
+        <h1> You have reached the daily limits of your request, would you please pass premium for more recipes per day :D </h1>
+        <form action="/payment/checkout" method="POST">
+            <button type="submit">Checkout</button>
+        </form>
+    </div>
+{% endblock %}
+

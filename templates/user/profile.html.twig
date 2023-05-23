@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}User{% endblock %}
+
+{% block main %}
+    <h1>User</h1>
+
+    <table class="table">
+        <tbody>
+        <tr>
+            <th>Email</th>
+            <td>{{ user.email }}</td>
+        </tr>
+        <tr>
+            <th>Firstname</th>
+            <td>{{ user.firstname }}</td>
+        </tr>
+        <tr>
+            <th>Lastname</th>
+            <td>{{ user.lastname }}</td>
+        </tr>
+        <tr>
+            <th>Avatar</th>
+            <td>{{ user.avatar }}</td>
+        </tr>
+        <tr>
+            <th>Username</th>
+            <td>{{ user.username }}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h1>Recipes</h1>
+
+    {% for recipe in recipes %}
+        {{ recipe.content }}
+    {% else %}
+        <tr>
+            <td colspan="11">This user did not publish any recipes</td>
+        </tr>
+    {% endfor %}
+
+{% endblock %}

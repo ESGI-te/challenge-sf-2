@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('style/user-recipe-list.css') }}">
+{% endblock %}
+{% block header %}
+    {{ include('partials/_header.html.twig') }}
+{% endblock %}
+{% block menu %}
+    {{ include('partials/_menu.html.twig') }}
+{% endblock %}
+
+{% block main %}
+    <div class="container">
+        {{ include("partials/_searchbar.html.twig") }}
+        <div class="list-wrapper">
+            {% if recipes %}
+                {{ include('partials/_recipe-list.html.twig', { recipes }) }}
+            {% else %}
+                <div>
+                    <img src="{{ asset('image/Woman.png') }}" alt="Your Image">
+                    <p>Vous n'avez aucune créé aucune recette pour le moment</p>
+                    <a href="{{ path('recipe_generate') }}">
+                        <button class="button button--primary">Générer une recette</button>
+                    </a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

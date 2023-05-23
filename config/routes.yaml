@@ -1,3 +1,18 @@
 controllers:
-    resource: ../src/Controller/
+    resource:
+        path: ../src/Controller/
+        namespace: App\Controller
     type: attribute
+
+recipe_comment_add:
+    path: /recipes/{id}/comments
+    controller: App\Controller\RecipeController::addComment
+    methods: POST
+
+comment_delete:
+    path: /comments/{id}/delete
+    controller: App\Controller\RecipeController::Commentdelete
+
+payment_success:
+    path: /payment/success/{slug}
+    controller: App\Controller\PaymentController::success

@@ -1,0 +1,112 @@
+.comment{
+    margin-top: 16px;
+    background-color: #FFFFFF;
+}
+.comment-content{
+    padding: 1rem;
+    width: 100%;
+}
+
+.imgContainer{
+    width: 100%;
+}
+
+.text-recipe{
+    margin-top: 16px;
+}
+.comment-head{
+    display: flex;
+    justify-content: space-between;
+}
+
+#comment_content {
+    height: 2px;
+    width: 200px;
+    padding: 1rem;
+    margin-right: 1rem;
+    border-radius: 8px;
+    border-color: var(--black);
+}
+.comment{
+    display: flex;
+    margin-top: 16px;
+}
+
+.body h4{
+    margin-top: 16px;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 22px;
+    font-family: 'GeneralSans-Regular';
+    color: black;}
+.cross{
+    border: none;
+}
+
+.text-recipe{
+    margin-top: 16px;
+}
+
+.recipe-card{
+    background-size: cover;
+    background-position: center;
+    min-height: 120px;
+    min-width: 214px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.illustration{
+    background-size: cover;
+    background-position: center;
+    height: 20rem;
+    width: 100%;
+    position: relative;
+    border-radius: 8px;
+    position: relative;
+
+}
+
+.btn-primary{
+    height: 34px;
+    border-radius: 8px;
+}
+.ul-container{
+    display: flex;
+    column-gap: 1rem;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    flex-direction: row;
+    margin-top: 1rem;
+    padding: 1rem;
+    place-content: space-evenly;
+    width: 100%;
+    max-width: 500px;
+}
+.ul-text{
+    margin-left: 0.5rem;
+
+}
+.li-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.body ul{
+    margin-top: 10px;
+}
+
+@media (min-width: 1024px) {
+    .wrapper-recipe{
+        display: flex;
+    }
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 1.5rem;
+}

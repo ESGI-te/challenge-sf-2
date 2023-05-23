@@ -1,0 +1,22 @@
+<aside id="app_menu" class="app-menu">
+    <div class="app-menu__header">
+        <img class="app-menu__logo" id="app_menu_trigger" src="{{ asset('image/logo.svg') }}"/>
+        <img class="menu-trigger" id="app_menu_trigger" src="{{ asset('icons/close.svg') }}"/>
+    </div>
+    <p class="fw-body">
+Mes toques :        {{ app.session.get('nb_toke') }}
+    </p>
+    <nav class="nav">
+        <ul class="nav__list">
+            <li class="nav__item"><img alt="House" src="{{ asset('icons/Home.svg') }}"><a class="footnote bold" href="{{ path('home') }}">Accueil</a></li>
+            <li class="nav__item"><img alt="House" src="{{ asset('icons/plan1.svg') }}"><a class="footnote bold" href="{{ path('recipe_generate') }}">Générer une recette</a></li>
+            <li class="nav__item"><img alt="Book" src="{{ asset('icons/Book.svg') }}"><a class="footnote bold" href="{{ path('user_recipes') }}">Mes recettes</a></li>
+            <li class="nav__item"><img alt="Avatar" src="{{ asset('icons/User.svg') }}"><a class="footnote bold" href="{{ path('user_profile_private') }}">Profil</a></li>
+            <li class="nav__item"><img alt="Payment" src="{{ asset('icons/coins.svg') }}"><a class="footnote bold" href="{{ path('stripe_payment') }}">Obtenir des toques</a></li>
+        </ul>
+    </nav>
+    <a class="footnote fw-body app-menu__logout" href="{{ path('app_logout') }}">
+        <img src="{{ asset('icons/logout.svg') }}"/>
+        <span>Logout</span>
+    </a>
+</aside>

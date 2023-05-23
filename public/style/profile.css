@@ -1,0 +1,140 @@
+.button-primary{
+    border: solid 1px var(--green);
+    width: 100%;
+    height: 50px;
+    border-radius: 0.5rem;
+    text-align: center;
+    background-color: #A0B492;
+    color: white;
+}
+
+
+input[type="text"],[type="email"]{
+    max-width: 500px !important;
+}
+
+
+.content
+{
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+
+.column{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+.column *
+{
+    margin: 5px;
+}
+
+.avatar
+{
+    width: 200px;
+    height: 200px;
+}
+
+.grid {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    height: 100%;
+    max-width: 718px;
+    padding: 0;
+    gap: 30px;
+}
+
+.header-grid {
+    grid-row: 1;
+    grid-column: 1 / -1;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    background-color: #FFFFFF;
+    border-radius: 0.5rem;
+}
+
+.footer-grid {
+    grid-row: 4;
+    grid-column: 1 / -1;
+}
+
+
+.item-header{
+    margin-top: 40px ;
+    padding: 10px;
+}
+
+.item-header .title
+{
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.shadow{
+    box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%),
+    0 1px 3px 1px rgb(60 64 67 / 15%);
+}
+
+
+@media (max-width: 767px) {
+    .content
+    {
+        margin-top: 30px;
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+    }
+    .grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto repeat(4, 1fr) auto;
+        align-self: stretch;
+    }
+    .item {
+        grid-column: 1 / -1;
+    }
+    .footer-grid {
+        grid-row: 6;
+
+    }
+    .avatar_display
+    {
+        display: none;
+    }
+
+    .header-grid {
+        background-color: transparent;
+    }
+
+    .item-header{
+        margin-top: 10px ;
+        padding: 0;
+        max-width: 318px;
+    }
+
+    .item-header .title
+    {
+        font-weight: bold;
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .button-primary
+    {
+        max-width: 318px;
+    }
+
+}

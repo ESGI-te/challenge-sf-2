@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ingrédient{% endblock %}
+
+{% block main %}
+    <div class="container d-flex justify-content-between">
+        <div class="row"></div>
+        {{ include('partials/_adminnav.html.twig') }}
+        <main class="col-9 border border-light bg-white p-2">
+            <h1>Créer un ingrédient</h1>
+
+            {{ include('ingredient/_form.html.twig') }}
+
+            <a class="btn btn-secondary" href="{{ path('app_ingredient_index') }}">retour à la liste</a>
+
+        </main>
+    </div>
+{% endblock %}

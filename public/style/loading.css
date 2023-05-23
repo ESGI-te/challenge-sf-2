@@ -1,0 +1,40 @@
+.container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+.app-main {
+    padding: 0;
+}
+.loader {
+    width: 199px;
+    height: 192px;
+}
+.container >:first-child, .container>:last-child {
+    display: none;
+}
+
+@media only screen and (min-width: 768px) {
+    .container {
+        position: relative;
+    }
+    .container >:first-child {
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: block;
+    }
+    .container >:last-child {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        display: block;
+    }
+    .loader {
+        width: 398px;
+        height: 419px;
+    }
+}

@@ -1,0 +1,52 @@
+{% block stylesheets %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+{% endblock %}
+<div class="d-flex" style="flex-flow: column;">
+    <div class="bg-white border border-light mb-1" style="text-align: center">
+        <a href="{{ path('home') }}" style="text-decoration: none">Page d'acceuil</a>
+    </div>
+    <aside class="border border-light bg-white p-2">
+        <article class="card mb-3">
+            <div class="card-header">
+                Utilisateur
+            </div>
+            <div class="card-body">
+                <p class="m-2"><a href="{{ path('admin_users') }}">Liste des Utilisateur</a></p>
+            </div>
+        </article>
+        <article class="card mb-3">
+            <div class="card-header">
+                Catégorie Ingrédients
+            </div>
+            <div class="card-body">
+                <p class="m-2"><a href="{{ path('app_ingredient_index') }}">Liste des Ingrédients</a></p>
+                <p class="m-2"><a href="{{ path('app_ingredient_type_index') }}">Types des Ingrédients</a></p>
+            </div>
+        </article>
+        <article class="card mb-3">
+            <div class="card-header">
+                Catégorie Recettes
+            </div>
+            <div class="card-body">
+                <p class="m-2"><a href="{{ path('admin_recipes') }}">Liste des Recettes</a></p>
+                <p class="m-2"><a href="{{ path('app_recipe_difficulty_index') }}">Difficulté de la recette</a></p>
+                <p class="m-2"><a href="{{ path('app_recipe_duration_index') }}">Durée de la recette</a></p>
+            </div>
+        </article>
+        <article class="card mb-3">
+            <div class="card-header">
+                Catégorie commentaire
+            </div>
+            <div class="card-body">
+                <p class="m-2"><a href="{{ path('app_comment_index') }}">Liste des commentaires</a></p>
+            </div>
+        </article>
+    </aside>
+</div>
+
+{% block javascripts %}
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+{% endblock %}

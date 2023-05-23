@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('style/search-list.css') }}">
+{% endblock %}
+{% block header %}
+    {{ include('partials/_header.html.twig') }}
+{% endblock %}
+{% block menu %}
+    {{ include('partials/_menu.html.twig') }}
+{% endblock %}
+{% block main %}
+    <div class="container">
+        {{ include("partials/_searchbar.html.twig") }}
+        <div class="list-wrapper">
+            {% if recipes %}
+                {{ include('partials/_recipe-list.html.twig', { recipes }) }}
+            {% else %}
+                <div>
+                    <img src="{{ asset('image/Woman.png') }}" alt="Your Image">
+                    <p>Aucune recette n'a été trouvée</p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
+{% endblock %}

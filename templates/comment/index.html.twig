@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Commentaires{% endblock %}
+
+{% block main %}
+
+    <div class="container d-flex justify-content-between">
+        <div class="row"></div>
+        {{ include('partials/_adminnav.html.twig') }}
+        <main class="col-9 border border-light bg-white p-2">
+            <h1>Commentaires</h1>
+            <label for="searchInput">Recherche:</label>
+            <input id="searchInput" type="text" class="form-control mb-3" placeholder="Tapez pour rechercher...">
+            <div style="height: 600px; overflow-y: auto;">
+                <table id="myTable" class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Email d'utilisateur</th>
+                    <th>Titre de recipe</th>
+                    <th class="text-truncate" style="max-width: 200px">commentaire</th>
+                    <th>Crée à</th>
+                    <th>action</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for comment in comments %}
+                    <tr>
+                        <td>{{ comment.id }}</td>
+                        <td>{{ comment.user_email }}</td>
+                        <td>{{ comment.recipeTitle }}</td>
+                        <td>{{ comment.content }}</td>
+                        <td>{{ comment.created_at ? comment.created_at|date('Y-m-d H:i:s') : '' }}</td>
+                        <td>
+                            <a class="btn btn-secondary" href="{{ path('app_comment_show', {'id': comment.id}) }}">Afficher</a>
+                            {{ include('comment/_delete_form.html.twig') }}
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="4">no records found</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('#searchInput').keyup(function() {
+                var searchText = $(this).val().toLowerCase();
+                $('#myTable tbody tr').filter(function() {
+                    return $(this).text().toLowerCase().indexOf(searchText) === -1;
+                }).hide();
+                $('#myTable tbody tr').filter(function() {
+                    return $(this).text().toLowerCase().indexOf(searchText) !== -1;
+                }).show();
+            });
+        });
+    </script>
+
+{% endblock %}

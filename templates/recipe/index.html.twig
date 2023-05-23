@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('style/recipe.css') }}">
+{% endblock %}
+{% block header %}
+    {{ include('partials/_header.html.twig') }}
+{% endblock %}
+{% block menu %}
+    {{ include('partials/_menu.html.twig') }}
+{% endblock %}
+{% block main %}
+    <div class="container">
+
+    <h1 class="heading">{{ recipe.title }}</h1>
+
+    <div class="illustration" style="background-image: url('{{ recipe.image }}');"></div>
+        <ul class= ul-container>
+            <li class="li-container">
+                <img class="imgContainer" src="{{ asset('image/User.svg') }}" alt="Your Image">
+                <p class="ul-text">{{ recipe.nbPeople }}</p>
+            </li>
+            <li class="li-container">
+                <img class="imgContainer" src="{{ asset('image/difficulty.svg') }}" alt="Your Image">
+                <p class="ul-text">{{ recipe.difficulty.name }}</p>
+
+            </li>
+            <li class="li-container">
+                <img class="imgContainer" src="{{ asset('image/Time_atack.svg') }}" alt="Your Image">
+                <p class="ul-text">{{ recipe.duration.name }}</p>
+            </li>
+        </ul>
+        <div class="fw-body">
+            {{ recipe.content|raw }}      </div>
+        <div>
+            <h2 class="fw-body">Commentaires</h2>
+            {% for comment in recipe.comments %}
+                <div class="comment" src="{{ asset('image/comment.svg') }}">
+                    <div class="comment-content">
+                        <div class="comment-head">
+                            <p class="fw-body">De {{ comment.userId.username }}</p>
+                            {% if app.user is same as(comment.userId)  %}
+                                <form action="{{ path('comment_delete', {'id': recipe.id, 'commentId': comment.id}) }}" method="post">
+                                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ comment.id) }}" />
+                                    <button class="cross" type="submit">X</button>
+                                </form>
+                            {% endif %}
+                        </div>
+                        <p class="fw-body">{{ comment.content }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+            <h4 class="text-recipe">Ajouter un Commentaire</h4>
+            <div>
+                {{ form_start(comment_form, {'attr': {'class': 'comment'}}) }}
+                {{ form_widget(comment_form.content) }}
+                <button type="submit" class="btn btn-primary">Ajouter un Commentaires</button>
+                {{ form_end(comment_form) }}
+            </div>
+    </div>
+    </div>
+{% endblock %}

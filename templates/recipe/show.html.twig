@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block main %}
+    <h1>{{ recipe.title }}</h1>
+
+    <p class="fw-body">{{ recipe.content }}</p>
+
+    <h2>Comments</h2>
+    {% for comment in comments %}
+        <div>
+            <p>{{ comment.user.username }} said:</p>
+            <p>{{ comment.content }}</p>
+            {% if comment.user == app.user %}
+                <form action="{{ path('recipe_comment_delete', { 'id': comment.id }) }}" method="post">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <button type="submit">Delete</button>
+                </form>
+            {% endif %}
+        </div>
+    {% endfor %}
+
+    <h2>Add a comment</h2>
+    <form action="{{ path('recipe_comment', { 'id': recipe.id }) }}" method="post">
+        <textarea name="content" rows="4" cols="50"></textarea><br>
+        <button type="submit">Submit</button>
+    </form>
+{% endblock %}

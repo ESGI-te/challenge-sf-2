@@ -1,0 +1,70 @@
+.content{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+
+}
+
+.button{
+    margin-top: 0.5rem;
+    max-width: 100%;
+}
+form{
+    align-self: stretch;
+
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 2rem;
+    width: 100%;
+}
+
+.plans-grid {
+    display: grid;
+    align-items: center;
+    grid-template-rows: repeat(4, auto);
+    grid-template-columns: minmax(auto, 300px);
+    gap: 2rem;
+    width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+    .plans-grid {
+        grid-template-columns:  minmax(auto, 300px)  minmax(auto, 300px);
+    ;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .container {
+        align-items: start;
+    }
+}
+
+.plan-title {
+    display: flex;
+    align-items: end;
+    column-gap: 0.5rem;
+}
+
+.plan-card {
+    background-color: #FFFFFF;
+    border-radius: 0.25rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem;
+    width: 100%;
+}
+
+.plan-card > .icon {
+    width: 40px;
+    height: 46px;
+}
+
+.icon > svg {
+    width: 40px;
+    height: 46px;
+}

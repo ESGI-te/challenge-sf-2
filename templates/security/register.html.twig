@@ -1,0 +1,25 @@
+{% extends "base.html.twig" %}
+
+{% block title %}S'inscrire{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('style/register.css') }}">
+{% endblock %}
+
+{% block main %}
+    <div class="container">
+        <img class="logo" src="{{ asset('image/logo-img.svg') }}">
+        <div class="contentWrapper">
+            <h1 class="heading">S'inscrire</h1>
+            {{ form_start(form) }}
+            {{ form_row(form.lastname)}}
+            {{ form_row(form.firstname)}}
+            {{ form_row(form.username)}}
+            {{ form_row(form.email)}}
+            {{ form_row(form.password)}}
+            <button class="button button--primary" type="submit">S'inscrire</button>
+            {{ form_end(form)}}
+        </div>
+    </div>
+{% endblock %}

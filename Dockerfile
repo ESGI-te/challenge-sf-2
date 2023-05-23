@@ -5,7 +5,7 @@
 
 # https://docs.docker.com/engine/reference/builder/#understand-how-arg-and-from-interact
 ARG PHP_VERSION=8.1
-ARG CADDY_VERSION=2
+ARG CADDY_VERSION=2.7
 
 # Prod image
 FROM php:${PHP_VERSION}-fpm-alpine AS app_php
@@ -142,14 +142,13 @@ RUN rm -f .env.local.php
 # Build Caddy with the Mercure and Vulcain modules
 FROM caddy:${CADDY_VERSION}-builder-alpine AS app_caddy_builder
 
-RUN xcaddy build \
+RUN xcaddy build v2.6.4 \
 	--with github.com/dunglas/mercure \
 	--with github.com/dunglas/mercure/caddy \
-	--with github.com/dunglas/vulcain \
 	--with github.com/dunglas/vulcain/caddy
 
 # Caddy image
-FROM caddy:${CADDY_VERSION} AS app_caddy
+FROM caddy:2-alpine AS app_caddy
 
 WORKDIR /srv/app
 

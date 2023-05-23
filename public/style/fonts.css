@@ -1,0 +1,36 @@
+@font-face {
+    font-family: 'GeneralSans-Bold';
+    src: url('../font/GeneralSans-Bold.woff') format('woff'),
+    url('../font/GeneralSans-Bold.woff2') format('woff2');
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GeneralSans-Regular';
+    src: url('../font/GeneralSans-Regular.woff') format('woff'),
+    url('../font/GeneralSans-Regular.woff2') format('woff2');
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GeneralSans-Semibold';
+    src: url('../font/GeneralSans-Semibold.woff') format('woff'),
+    url('../font/GeneralSans-Semibold.woff2') format('woff2');
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GeneralSans-Medium';
+    src: url('../font/GeneralSans-Medium.woff') format('woff'),
+    url('../font/GeneralSans-Medium.woff2') format('woff2');
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GeneralSans-Extralight';
+    src: url('../font/GeneralSans-Extralight.woff') format('woff'),
+    url('../font/GeneralSans-Extralight.woff2') format('woff2');
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GeneralSans-Light';
+    src: url('../font/GeneralSans-Light.woff') format('woff'),
+    url('../font/GeneralSans-Light.woff2') format('woff2');
+    font-style: normal;
+}

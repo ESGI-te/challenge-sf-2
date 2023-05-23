@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Commentaire{% endblock %}
+
+{% block main %}
+
+    <div class="container d-flex justify-content-between">
+        <div class="row"></div>
+        {{ include('partials/_adminnav.html.twig') }}
+        <main class="col-9 border border-light bg-white p-2">
+            <h1>Commentaire</h1>
+            <table class="table table-striped">
+                <tbody>
+                <tr>
+                    <th>Id</th>
+                    <td>{{ comment.id }}</td>
+                </tr>
+                <tr>
+                    <th>Email d'utilisateur</th>
+                    <td>{{ comment.user_email }}</td>
+                </tr>
+                <tr>
+                    <th>Titre de recipe</th>
+                    <td>{{ comment.recipeTitle }}</td>
+                </tr>
+                <tr>
+                    <th>commentaire</th>
+                    <td>{{ comment.content }}</td>
+                </tr>
+                <tr>
+                    <th>Crée à</th>
+                    <td>{{ comment.created_at ? comment.created_at |date('Y-m-d H:i:s') : '' }}</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <a class="btn btn-secondary" href="{{ path('app_comment_index') }}">retour à la liste</a>
+
+            {{ include('comment/_delete_form.html.twig') }}
+        </main>
+    </div>
+
+
+{% endblock %}

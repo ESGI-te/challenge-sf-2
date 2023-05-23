@@ -1,0 +1,317 @@
+# Vegetables
+- type: Vegetables
+  name: Tomates
+- type: Vegetables
+  name: Aubergine
+- type: Vegetables
+  name: Carottes
+- type: Vegetables
+  name: Oignons
+- type: Vegetables
+  name: Pommes de terre
+- type: Vegetables
+  name: Poivrons
+- type: Vegetables
+  name: Brocolis
+- type: Vegetables
+  name: Chou
+- type: Vegetables
+  name: Épinards
+- type: Vegetables
+  name: Laitue
+- type: Vegetables
+  name: Chou frisé
+- type: Vegetables
+  name: Concombres
+- type: Vegetables
+  name: Courgettes
+- type: Vegetables
+  name: Aubergines
+- type: Vegetables
+  name: Haricots verts
+- type: Vegetables
+  name: Petits pois
+- type: Vegetables
+  name: Champignons
+- type: Vegetables
+  name: Choux de Bruxelles
+
+# Meat
+- type: Meat
+  name: Boeuf
+- type: Meat
+  name: Porc
+- type: Meat
+  name: Aiguillettes de poulet
+- type: Meat
+  name: Dinde
+- type: Meat
+  name: Agneau
+- type: Meat
+  name: Lardons
+- type: Meat
+  name: Jambon
+- type: Meat
+  name: Saucisse
+- type: Meat
+  name: Salami
+- type: Meat
+  name: Chorizo
+- type: Meat
+  name: Prosciutto
+- type: Meat
+  name: Boeuf haché
+- type: Meat
+  name: Steak
+- type: Meat
+  name: Rôti de boeuf
+- type: Meat
+  name: Côtes d'agneau
+- type: Meat
+  name: Côtes de porc
+- type: Meat
+  name: Porc haché
+- type: Meat
+  name: Canard
+- type: Meat
+  name: Poulet entier
+- type: Meat
+  name: Lapin
+
+# Fruits
+- type: Fruits
+  name: Banane
+- type: Fruits
+  name: Pomme
+- type: Fruits
+  name: Orange
+- type: Fruits
+  name: Mangue
+- type: Fruits
+  name: Ananas
+- type: Fruits
+  name: Fraise
+- type: Fruits
+  name: Framboise
+- type: Fruits
+  name: Myrtille
+- type: Fruits
+  name: Raisin
+- type: Fruits
+  name: Kiwi
+- type: Fruits
+  name: Abricot
+- type: Fruits
+  name: Pêche
+- type: Fruits
+  name: Poire
+- type: Fruits
+  name: Prune
+- type: Fruits
+  name: Cerise
+- type: Fruits
+  name: Melon
+- type: Fruits
+  name: Pastèque
+- type: Fruits
+  name: Nectarine
+- type: Fruits
+  name: Citron
+- type: Fruits
+  name: Lime
+
+# Fish
+- type: Fish
+  name: Saumon
+- type: Fish
+  name: Truite
+- type: Fish
+  name: Bar
+- type: Fish
+  name: Merlu
+- type: Fish
+  name: Maquereau
+- type: Fish
+  name: Cabillaud
+- type: Fish
+  name: Espadon
+- type: Fish
+  name: Thon
+- type: Fish
+  name: Sardine
+- type: Fish
+  name: Anchois
+- type: Fish
+  name: Hareng
+- type: Fish
+  name: Morue
+- type: Fish
+  name: Raie
+- type: Fish
+  name: Carpe
+- type: Fish
+  name: Brochet
+- type: Fish
+  name: Anguille
+- type: Fish
+  name: Flétan
+- type: Fish
+  name: Turbot
+- type: Fish
+  name: Grenadier
+- type: Fish
+  name: Lieu noir
+
+# Spices
+- type: Spices
+  name: Cumin
+- type: Spices
+  name: Curcuma
+- type: Spices
+  name: Paprika
+- type: Spices
+  name: Poivre noir
+- type: Spices
+  name: Cannelle
+- type: Spices
+  name: Gingembre
+- type: Spices
+  name: Noix de muscade
+- type: Spices
+  name: Cardamome
+- type: Spices
+  name: Girofle
+- type: Spices
+  name: Anis
+- type: Spices
+  name: Fenugrec
+- type: Spices
+  name: Moutarde
+- type: Spices
+  name: Ail
+- type: Spices
+  name: Oignon
+- type: Spices
+  name: Piment d'Espelette
+- type: Spices
+  name: Safran
+- type: Spices
+  name: Poivre blanc
+
+# Herbs
+- type: Herbs
+  name: Basilic
+- type: Herbs
+  name: Persil
+- type: Herbs
+  name: Ciboulette
+- type: Herbs
+  name: Thym
+- type: Herbs
+  name: Romarin
+- type: Herbs
+  name: Sauge
+- type: Herbs
+  name: Menthe
+- type: Herbs
+  name: Coriandre
+- type: Herbs
+  name: Aneth
+- type: Herbs
+  name: Estragon
+- type: Herbs
+  name: Origan
+- type: Herbs
+  name: Fenouil
+- type: Herbs
+  name: Laurier
+- type: Herbs
+  name: Marjolaine
+- type: Herbs
+  name: Serpolet
+- type: Herbs
+  name: Sarriette
+- type: Herbs
+  name: Piment
+
+# Sweets
+- type: Grains
+  name: Riz
+- type: Grains
+  name: Blé
+- type: Grains
+  name: Pâtes
+- type: Grains
+  name: Orge
+- type: Grains
+  name: Maïs
+- type: Grains
+  name: Avoine
+- type: Grains
+  name: Seigle
+- type: Grains
+  name: Sarrasin
+- type: Grains
+  name: Quinoa
+- type: Grains
+  name: Millet
+- type: Grains
+  name: Épeautre
+- type: Grains
+  name: Kamut
+- type: Grains
+  name: Farro
+- type: Grains
+  name: Couscous
+- type: Grains
+  name: Bulgur
+- type: Grains
+  name: Polenta
+- type: Grains
+  name: Pain
+- type: Grains
+  name: Crackers
+- type: Grains
+  name: Biscottes
+- type: Grains
+  name: Muesli
+
+# Sweets
+- type: Sweets
+  name: Sucre
+- type: Sweets
+  name: Miel
+- type: Sweets
+  name: Sirop d'érable
+- type: Sweets
+  name: Sirop de riz
+- type: Sweets
+  name: Sirop d'agave
+- type: Sweets
+  name: Stevia
+- type: Sweets
+  name: Dattes
+- type: Sweets
+  name: Raisins secs
+- type: Sweets
+  name: Fruits secs
+- type: Sweets
+  name: Chocolat
+- type: Sweets
+  name: Vanille
+- type: Sweets
+  name: Pâte à tartiner
+- type: Sweets
+  name: Sucre glace
+- type: Sweets
+  name: Caramel
+- type: Sweets
+  name: Anis étoilé
+- type: Sweets
+  name: Clous de girofle
+- type: Sweets
+  name: Noisettes
+- type: Sweets
+  name: Amandes
+- type: Sweets
+  name: Noix de cajou

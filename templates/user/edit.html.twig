@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('style/profile.css') }}" />
+{% endblock %}
+
+{% block header %}
+    {{ include('partials/_header.html.twig') }}
+{% endblock %}
+
+{% block menu %}
+    {{ include('partials/_menu.html.twig') }}
+{% endblock %}
+
+
+{% block title %}User{% endblock %}
+
+{% block main %}
+
+
+
+        <div class="column">
+            <img src='https://api.dicebear.com/5.x/thumbs/svg?radius=50&seed={{ user.username }}' class="avatar">
+            {{ form_start(form) }}
+            <div class="inputWrapper item">
+                {{ form_label(form.email) }}
+                {{ form_widget(form.email) }}
+            </div>
+            <div class="inputWrapper item">
+                {{ form_label(form.firstname) }}
+                {{ form_widget(form.firstname) }}
+                {{ form_errors(form.firstname) }}
+            </div>
+            <div class="inputWrapper item">
+                {{ form_label(form.lastname) }}
+                {{ form_widget(form.lastname) }}
+                {{ form_errors(form.lastname) }}
+            </div>
+            <div class="inputWrapper item">
+                {{ form_label(form.username) }}
+                {{ form_widget(form.username) }}
+                {{ form_errors(form.username) }}
+            </div>
+            <button class="button-primary link">{{ button_label|default('Enregistrer') }}</button>
+            {{ form_end(form) }}
+        </div>
+
+{% endblock %}

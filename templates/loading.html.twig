@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Se connecter{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('style/loading.css') }}">
+{% endblock %}
+{% block main %}
+    <div class="container">
+        <img src="{{ asset('image/pizza.png') }}">
+        <video class="loader" autoplay loop muted preload="auto">
+            <source src="{{ asset('video/loader.mp4') }}" type="video/mp4">
+        </video>
+        <img src="{{ asset('image/woman.png') }}">
+    </div>
+{% endblock %}
