@@ -54,9 +54,8 @@ class UserService
     public function getUsersWithDetails(): array
     {
         $query = $this->em->createQuery('
-        SELECT u.id, u.firstname, u.lastname, u.email, u.roles, u.username, p.name AS plan
+        SELECT u.id, u.firstname, u.lastname, u.email, u.roles, u.username, u.nb_toke
         FROM App\Entity\User u
-        JOIN u.plan p
         ORDER BY u.email
         ');
         return $query->getResult();

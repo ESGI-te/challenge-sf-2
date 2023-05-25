@@ -38,7 +38,7 @@ class AdminController extends AbstractController
 
         $form = $this->createForm(UserEditType::class, $user, [
             'admin_roles' => $user->getRoles(),
-            'user_plan' => $user->getPlan(),
+            'nb_toke' => $user->getNbToke(),
         ]);
         $form->handleRequest($request);
 

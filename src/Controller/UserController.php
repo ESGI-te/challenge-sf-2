@@ -70,13 +70,5 @@ class UserController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'profile_public', methods: ['GET'])]
-    public function public_profile(User $user): Response
-    {
-        return $this->render('user/profile.html.twig', [
-            'user' => $user,
-            'recipes' => $user->getRecipes()
-        ]);
-    }
 
 }
