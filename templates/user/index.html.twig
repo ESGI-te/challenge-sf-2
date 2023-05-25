@@ -11,12 +11,12 @@
             <h1>Utilisateurs</h1>
             <label for="searchInput">Recherche:</label>
             <input id="searchInput" type="text" class="form-control mb-3" placeholder="Tapez pour rechercher...">
-            <div style="height: 600px; overflow-y: auto;">
+            <div style="height: 500px; overflow-y: auto;">
                 <table id="myTable" class="table table-striped">
                     <thead>
                     <tr>
                         <th>Email</th>
-                        <th>Plan</th>
+                        <th>Nombre de toque</th>
                         <th>Prénom</th>
                         <th>Nom</th>
                         <th>Rôles</th>
@@ -30,12 +30,12 @@
                             <td>{{ user.email }}</td>
                             <td>
                                 {% set color = "" %}
-                                {% if user.plan == "Premium" %}
-                                    {% set color = "info" %}
-                                {% elseif user.plan == "Basic" %}
+                                {% if user.nb_toke == 0 %}
                                     {% set color = "dark" %}
+                                {% elseif user.nb_toke != 0 %}
+                                    {% set color = "info" %}
                                 {% endif %}
-                                <span class="badge bg-{{ color }}">{{ user.plan }}</span>
+                                <span class="badge bg-{{ color }}">{{ user.nb_toke }}</span>
                             </td>
                             <td>{{ user.firstname }}</td>
                             <td>{{ user.lastname }}</td>
@@ -57,8 +57,6 @@
                             </td>
                             <td>{{ user.username }}</td>
                             <td>
-
-                                <a class="btn btn-secondary" href="{{ path('user_profile_public',{'id': user.id}) }}">Profile</a>
                                 <a class="btn btn-success" href="{{ path('admin_users_edit',{'id': user.id}) }}">Modifier</a>
                                 <form method="post" action="{{ path('admin_users_delete', {'id': user.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
                                     <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ user.id) }}">
