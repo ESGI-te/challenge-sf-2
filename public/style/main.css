@@ -19,7 +19,9 @@
 * {
     box-sizing: border-box;
 }
-
+.coms{
+    width: 100%;
+}
 .fw-body {
     font-weight: 400;
     font-size: 1rem;
@@ -40,6 +42,9 @@
     line-height: 32px;
     font-family: 'GeneralSans-Semibold';
     color: black;
+}
+.text-recipe{
+    margin-bottom: 1rem;
 }
 .subheading {
     font-weight: 400;

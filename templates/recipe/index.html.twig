@@ -32,7 +32,7 @@
         </ul>
         <div class="fw-body">
             {{ recipe.content|raw }}      </div>
-        <div>
+        <div class="coms">
             <h2 class="fw-body">Commentaires</h2>
             {% for comment in recipe.comments %}
                 <div class="comment" src="{{ asset('image/comment.svg') }}">
@@ -52,7 +52,7 @@
             {% endfor %}
             <h4 class="text-recipe">Ajouter un Commentaire</h4>
             <div>
-                {{ form_start(comment_form, {'attr': {'class': 'comment'}}) }}
+                {{ form_start(comment_form, {'attr': {'class': ''}}) }}
                 {{ form_widget(comment_form.content) }}
                 <button type="submit" class="btn btn-primary">Ajouter un Commentaires</button>
                 {{ form_end(comment_form) }}
